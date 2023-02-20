@@ -1,0 +1,67 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection("content"); ?>
+ <div class="page-wrapper">
+ <div class="container-fluid">
+ <!-- ============================================================== -->
+ <!-- Start Page Content -->
+ <!-- ============================================================== -->
+ <div class="row">
+ <div class="col-md-6">
+ <div class="card">
+ <form method="POST" action="<?php echo \htmlentities(route('post-add-suat-chieu')??'', ENT_QUOTES, 'UTF-8', false); ?>" enctype="multipart/form-data" class="form-horizontal">
+ <div class="card-body">
+ <h4 class="card-title">Thêm Suất Chiếu</h4>
+
+ <div class="form-group row">
+ <label for="fname" class="col-sm-3 text-right control-label col-form-label">Phim</label>
+ <div class="col-sm-9">
+ <select class="select2 form-control custom-select" style="width: 100%; height:36px;" name="id_phim">
+ <?php $__currentLoopData = $phim; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $value): $loop = $this->incrementLoopIndices();  ?>
+ <option value="<?php echo \htmlentities($value->id_phim??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($value->ten_phim??'', ENT_QUOTES, 'UTF-8', false); ?></option>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </select>
+ </div>
+ </div>
+
+ <div class="form-group row">
+ <label for="fname" class="col-sm-3 text-right control-label col-form-label">Phòng Chiếu - Chi Nhánh Chiếu</label>
+ <div class="col-sm-9">
+ <select class="select2 form-control custom-select" style="width: 100%; height:36px;" name="id_phong_chieu">
+ <?php $__currentLoopData = $phong_chieu; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $value): $loop = $this->incrementLoopIndices();  ?>
+ <option value="<?php echo \htmlentities($value->id_pc??'', ENT_QUOTES, 'UTF-8', false); ?>"> <?php echo \htmlentities($value->ten_phong??'', ENT_QUOTES, 'UTF-8', false); ?> - Chi Nhánh: <?php echo \htmlentities($value->ten_chi_nhanh??'', ENT_QUOTES, 'UTF-8', false); ?></option>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </select>
+ </div>
+ </div>
+
+
+ <div class="border-top">
+ <div class="card-body">
+ <button type="submit" name="btn_add" class="btn btn-primary">Thêm</button>
+ <a href="<?php echo \htmlentities(route('list-suat-chieu')??'', ENT_QUOTES, 'UTF-8', false); ?>" type="submit" name="btn-submit" class="btn btn-primary">Danh sách</a>
+ </div>
+ </div>
+ </div>
+ </form>
+ </div>
+ </div>
+ </div>
+ <!-- ============================================================== -->
+ <!-- End PAge Content -->
+ <!-- ============================================================== -->
+ <!-- ============================================================== -->
+ <!-- Right sidebar -->
+ <!-- ============================================================== -->
+ <!-- .right-sidebar -->
+ <!-- ============================================================== -->
+ <!-- End Right sidebar -->
+ <!-- ============================================================== -->
+ </div>
+ </div>
+<?php $this->stopSection(); ?>
+
+
+
+<?php if (isset($_shouldextend[1])) { echo $this->runChild("layout.main"); } ?>

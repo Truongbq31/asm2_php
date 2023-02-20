@@ -1,0 +1,20 @@
+{
+    "name": "ytbsa/asm2",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "truongbq31",
+            "email": "ytbsadboy@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/database": "^10.0",
+        "illuminate/events": "^10.0",
+        "eftec/bladeone": "^4.8",
+        "phroute/phroute": "^2.2"
+    }
+}

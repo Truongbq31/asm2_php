@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<?php echo $this->runChild("layout_login.head"); ?>
+<body>
+<div id="main-wrapper">
+ <section class="content">
+ <?php 
+ if (isset($_SESSION['noti'])){
+ $msg = $_SESSION['noti'];
+ echo "<script>alert(`${msg}`)</script>";
+ unset($_SESSION['noti']);
+ }
+ ?>
+ <?php echo $this->yieldContent("content"); ?>
+ </section>
+</div>
+</body>
+</html>
+
