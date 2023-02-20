@@ -68,7 +68,7 @@ class c_account extends BaseController{
                 $result = $this->m_account->signup($id, $username, md5($password), $email, $trang_thai);
             }
             if ($result){
-                noti("noti", "Đăng kí tài khoản thành công", "login");
+                noti("noti", "Đăng kí tài khoản thành công!", "login");
             }
         }
     }
